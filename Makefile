@@ -27,7 +27,12 @@ COL_WHITE	= \033[1;37m
 ## SOURCES
 ######
 
-SRC_M_SELECT = ft_parse_argv_to_tlist.c ft_tlist_del.c ft_init_term.c
+SRC_M_SELECT = ft_parse_argv_to_tlist.c ft_tlist_del.c ft_tlist_del_elem.c ft_init_term.c ft_tlist_display.c\
+		ft_applied_basic_capa_str.c\
+		ft_term_begin_soulign.c ft_term_end_soulign.c ft_term_invisible_cursor.c\
+		ft_tlist_s_display.c ft_term_clear.c\
+		ft_found_code_key.c ft_manage_keyboard_event.c
+
 
 SRC_M_S=$(addprefix ./$(SRC_M_SELECT_PATH)/, $(SRC_M_SELECT))
 
@@ -46,7 +51,7 @@ all: $(NAME)
 
 $(NAME): lib $(OBJ_M_S)
 	gcc -c main.c -I $(INC) -I $(INC_PATH)
-	$(CC) $(CFLAGS) main.o $(OBJ_M_S) -I $(INC) -I $(INC_PATH) -L $(LIB_PATH) -lft -o $(NAME)
+	$(CC) $(CFLAGS) main.o $(OBJ_M_S) -ltermcap -I $(INC) -I $(INC_PATH) -L $(LIB_PATH) -lft -o $(NAME)
 
 $(OBJ_M_S): $(OBJ_PATH)%.o : $(SRC_PATH)/$(SRC_M_SELECT_PATH)%.c
 	@$(CC) $(CFLAGS) -I$(INC_PATH) -I$(INC) -c $< -o $@
