@@ -1,7 +1,8 @@
 #include <term.h>
 #include <termios.h>
 #include <stdlib.h>
-#include <curses.h>
+#include <stdio.h>
+#include <unistd.h>
 
 int	ft_init_term(void)
 {
@@ -16,8 +17,6 @@ int	ft_init_term(void)
 		return (-1);
 	term.c_lflag &= ~(ICANON); // terminal en mode canonique
 	term.c_lflag &= ~(ECHO); // les touches tape ne s affiche plus
-	term.c_cc[VMIN] = 1;
-	term.c_cc[VTIME] = 0;
 	if (tcsetattr(0, TCSADRAIN, &term) == -1)
 		return (-1);
 	return (1);

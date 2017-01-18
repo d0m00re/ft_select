@@ -17,6 +17,10 @@ static	void ft_manage_arrow_event(int id, int size_max, int *cursor)
 		else
 			(*cursor) = 0;
 	}
+	else if (id == TOP)
+		*cursor = 0;
+	else if (id == BOTTOM)
+		*cursor = size_max - 1;
 }
 
 static void	ft_manage_space_event(int id, t_tlist *tlist)
@@ -39,8 +43,11 @@ int	ft_manage_keyboard_event(int id, t_tlist *tlist, int *cursor)
 	if (id >= TOP && id <= LEFT)
 		ft_manage_arrow_event(id, tlist->nb_elem, cursor);
 	else if (id == SPACE)
+	{
 		ft_manage_space_event(*cursor, tlist);
-	else if (id == ENTER)
+		ft_manage_arrow_event(RIGHT, tlist->nb_elem, cursor);
+	}
+	else if (id == DELETE || id == BACKSPACE)
 		ft_manage_enter_event(cursor, tlist);
 	return (1);
 }

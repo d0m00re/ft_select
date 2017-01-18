@@ -5,7 +5,7 @@ void ft_tlist_s_display(t_tlist *tlist, int cursor)
 {
 	int c;
 
-	if (!tlist)
+	if (!tlist || !(ft_one_line_display_is_valid(tlist)))
 		return ;
 	c = 0;
 	while (c < tlist->nb_elem)

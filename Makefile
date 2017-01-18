@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS= -Wall -Wextra -Werror
+#CFLAGS= -Wall -Wextra -Werror
 LIB_PATH=libft
 INC=includes
 INC_PATH= ./$(LIB_PATH)/$(INC)
@@ -27,11 +27,16 @@ COL_WHITE	= \033[1;37m
 ## SOURCES
 ######
 
-SRC_M_SELECT = ft_parse_argv_to_tlist.c ft_tlist_del.c ft_tlist_del_elem.c ft_init_term.c ft_tlist_display.c\
+SRC_M_SELECT = ft_parse_argv_to_tlist.c ft_tlist_parse_select_str.c\
+		ft_tlist_del.c ft_tlist_del_elem.c ft_init_term.c ft_tlist_display.c\
 		ft_applied_basic_capa_str.c\
 		ft_term_begin_soulign.c ft_term_end_soulign.c ft_term_invisible_cursor.c\
+		ft_term_get_weight.c ft_term_get_height.c\
 		ft_tlist_s_display.c ft_term_clear.c\
-		ft_found_code_key.c ft_manage_keyboard_event.c
+		ft_found_code_key.c ft_manage_keyboard_event.c\
+		ft_one_line_display_is_valid.c\
+		ft_catch_sg.c ft_init_sg.c\
+		ft_reset_term.c
 
 
 SRC_M_S=$(addprefix ./$(SRC_M_SELECT_PATH)/, $(SRC_M_SELECT))
