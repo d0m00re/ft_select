@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_catch_sg.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alhelson <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/01/18 19:37:44 by alhelson          #+#    #+#             */
+/*   Updated: 2017/01/18 19:37:57 by alhelson         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <signal.h>
 #include "ft_ori.h"
 #include "ft_select.h"
@@ -31,11 +43,6 @@ void	ft_catch_sg(int id)
 			ioctl(0, TIOCSTI, &c);
 			ft_reset_term();
 			signal(SIGTSTP, SIG_DFL);
-		}
-		else
-		{
-			ft_putstr("suceuse\n");
-			pause();
 		}
 	}
 	else if (SIGCONT == id)

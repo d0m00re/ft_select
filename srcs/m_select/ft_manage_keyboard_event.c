@@ -1,7 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_manage_keyboard_event.c                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alhelson <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/01/18 22:19:11 by alhelson          #+#    #+#             */
+/*   Updated: 2017/01/18 22:31:57 by alhelson         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_select.h"
 #include "ft_ori.h"
 
-static	void ft_manage_arrow_event(int id, int size_max, int *cursor)
+static void	ft_manage_arrow_event(int id, int size_max, int *cursor)
 {
 	if (id == LEFT)
 	{
@@ -38,7 +50,7 @@ static void	ft_manage_enter_event(int *id, t_tlist *tlist)
 		(*id)--;
 }
 
-int	ft_manage_keyboard_event(int id, t_tlist *tlist, int *cursor)
+int			ft_manage_keyboard_event(int id, t_tlist *tlist, int *cursor)
 {
 	if (id >= TOP && id <= LEFT)
 		ft_manage_arrow_event(id, tlist->nb_elem, cursor);

@@ -1,11 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_tlist_parse_select_str.c                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alhelson <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/01/18 22:25:41 by alhelson          #+#    #+#             */
+/*   Updated: 2017/01/18 22:26:05 by alhelson         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_select.h"
 #include "ft_ori.h"
 #include <stdlib.h>
 
 static int	ft_total_size(t_tlist *tlist)
 {
-	int size;
-	int c;
+	int		size;
+	int		c;
 
 	c = 0;
 	size = 0;
@@ -18,11 +30,11 @@ static int	ft_total_size(t_tlist *tlist)
 	return (size);
 }
 
-char	*ft_tlist_parse_select_str(t_tlist *tlist)
+char		*ft_tlist_parse_select_str(t_tlist *tlist)
 {
-	int c;
-	int total_size;
-	char *str;
+	int		c;
+	int		total_size;
+	char	*str;
 
 	c = 0;
 	if ((total_size = ft_total_size(tlist)) < 1)

@@ -1,11 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_parse_argv_to_tlist.c                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alhelson <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/01/18 22:26:36 by alhelson          #+#    #+#             */
+/*   Updated: 2017/01/18 22:26:47 by alhelson         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_ori.h"
 #include "ft_select.h"
 #include <stdlib.h>
 
-t_tlist *ft_parse_argv_to_tlist(int argc, char **argv)
+t_tlist		*ft_parse_argv_to_tlist(int argc, char **argv)
 {
-	int c;
-	t_tlist *tlist;
+	int		c;
+	t_tlist	*tlist;
 
 	if (!(tlist = malloc(sizeof(t_tlist))))
 		return (0);

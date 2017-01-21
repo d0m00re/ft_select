@@ -1,13 +1,31 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_init_term.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alhelson <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/01/18 19:39:08 by alhelson          #+#    #+#             */
+/*   Updated: 2017/01/18 22:30:35 by alhelson         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <term.h>
 #include <termios.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
 
-int	ft_init_term(void)
+/*
+ * tgetent : load routine for the entry name
+ * tcgetattr : recuperer la struvture termios
+ * ICANON : terminal en mode canonique
+ * ECHO : les touche tape ne s affiche plus
+*/
+int			ft_init_term(void)
 {
-	char *name_term;
-	struct termios term;
+	char	*name_term;
+	struct	termios term;
 
 	if (!(name_term = getenv("TERM")))
 		return (-1);
